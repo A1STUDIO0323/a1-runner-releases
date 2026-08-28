@@ -1,0 +1,13 @@
+# Cloudflare 정적 페이지 설정 (2026-08-29)
+#
+# 이 저장소는 프로그램이 아니라 **HTML 파일 몇 장**이다.
+# 그래서 만들 것(build)이 없고, Cloudflare 가 파일을 그대로 내보내기만 하면 된다.
+#
+# 🔴 이 파일이 없으면 `npx wrangler deploy` 가 「무엇을 내보낼지 모르겠다」며 실패한다.
+
+name = "a1-runner-releases"
+compatibility_date = "2026-08-29"
+
+# 이 폴더의 파일을 그대로 웹으로 내보낸다
+[assets]
+directory = "./"
