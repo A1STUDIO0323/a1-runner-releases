@@ -1,13 +1,18 @@
-# Cloudflare 정적 페이지 설정 (2026-08-29)
+# Cloudflare 정적 페이지 설정
 #
 # 이 저장소는 프로그램이 아니라 **HTML 파일 몇 장**이다.
-# 그래서 만들 것(build)이 없고, Cloudflare 가 파일을 그대로 내보내기만 하면 된다.
+# 만들 것(build)이 없고, Cloudflare 가 파일을 그대로 내보내기만 하면 된다.
 #
-# 🔴 이 파일이 없으면 `npx wrangler deploy` 가 「무엇을 내보낼지 모르겠다」며 실패한다.
+# 🔴 2026-08-29 실사고 — 처음엔 `directory = "./"` 로 두었더니
+#    **저장소 전체(.git · .wrangler · README)가 인터넷에 올라갔다.**
+#    빌드 기록에 `+ /.git/HEAD`, `+ /.git/logs/refs/heads/main` 이 그대로 찍혔다.
+#    (공개 저장소라 새로 새어 나간 비밀은 없었지만, 내보낼 것만 내보내야 한다)
+#
+# ✅ 그래서 **내보낼 폴더를 따로 둔다.** public/ 안의 것만 나간다 —
+#    「무엇을 뺄까」(블랙리스트)가 아니라 「무엇을 낼까」(화이트리스트)라 실수할 자리가 없다.
 
 name = "a1-runner-releases"
 compatibility_date = "2026-08-29"
 
-# 이 폴더의 파일을 그대로 웹으로 내보낸다
 [assets]
-directory = "./"
+directory = "./public"
