@@ -12,7 +12,13 @@
 #    「무엇을 뺄까」(블랙리스트)가 아니라 「무엇을 낼까」(화이트리스트)라 실수할 자리가 없다.
 
 name = "a1-runner-releases"
+account_id = "00d53ba40cf4b924b0f9498d93882e40"
+workers_dev = true
+preview_urls = false
 compatibility_date = "2026-08-29"
+
+[build]
+command = "node scripts/verify-program-account.mjs"
 
 [assets]
 directory = "./public"
